@@ -1,0 +1,85 @@
+@import "config";
+@import "button";
+@import "utils";
+
+* {
+  @include reset-pm(); // llamamos a los mixin
+  // padding:0;
+  // margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $primary-color;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: $secondary-color;
+  text-decoration: none;
+}
+
+h2 {
+  font-weight: border;
+  font-size: size(6);
+}
+
+h3 {
+  font-weight: lighter;
+  font-size: size(3);
+}
+
+.container {
+  background-color: white;
+  margin: 20px auto;
+  width: 1280px;
+  padding: 40px 40px 20px 40px;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.1);
+  background-image: url(../bg.jpg);
+  background-size: 100% 100%;
+  border-radius: 100px;
+}
+
+//Identacion
+ul {
+  @include reset-pm(); // llamamos a los mixin
+  // padding:0;
+  // margin:0;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  li {
+    a {
+      @include btn($font-color, $secondary-color, "true");
+    }
+    a:hover {
+      @include btn($secondary-color, $terciary-color, "false");
+      box-shadow: $box-shadow;
+    }
+  }
+}
+
+header {
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.prices {
+  .prev {
+    font-size: size(2);
+    font-weight: bolder;
+    color: $font-color;
+    text-decoration: line-through;
+  }
+  .now {
+    font-size: size(5);
+    font-weight: bolder;
+  }
+}
+
+.py-4{
+    margin:10px 0 30px 0;
+}
